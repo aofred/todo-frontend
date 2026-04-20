@@ -53,4 +53,36 @@ async function logout() {
   }
 }
 
-export { getCurrentUser, signup, login, logout };
+async function getTodos() {
+  const response = await fetch(`${baseUrl}/todos`, {
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Couldn't fetch todos");
+  }
+
+  return await response.json();
+}
+
+async function createTodo(description) {
+  const response = await fetch(`${baseUrl}/todos`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({
+      description,
+      done: false,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Could not create todo");
+  }
+
+  return await response.json();
+}
+
+export { getCurrentUser, signup, login, logout, getTodos, createTodo };
