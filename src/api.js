@@ -85,4 +85,38 @@ async function createTodo(description) {
   return await response.json();
 }
 
-export { getCurrentUser, signup, login, logout, getTodos, createTodo };
+
+async function updateTodo(todo) {
+  const response = await fetch(`${baseUrl}/todos/${todo.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({
+      description: todo.description,
+      done: todo.done,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Couldn't update todo");
+  }
+
+  return await response.json();
+}
+
+async function deleteTodo(id) {
+  const response = await fetch(`${baseUrl}/todos/${id}`, {
+    method: "DELETE",
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Couldn't delete todo");
+  }
+}
+
+
+export { getCurrentUser, signup, login, logout, getTodos, 
+         createTodo, updateTodo, deleteTodo };
