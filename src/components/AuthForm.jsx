@@ -14,7 +14,7 @@ export default function AuthForm({ mode, onSubmit, onSwitchMode }) {
   }
 
   return (
-    <div>
+    <div className="card">
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
 
       <form onSubmit={handleSubmit}>

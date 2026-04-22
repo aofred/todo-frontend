@@ -71,7 +71,7 @@ export default function HomePage({ user, onLogout }) {
   }
 
   return (
-    <div>
+    <div className="card">
       <h1>Welcome</h1>
       <p>Logged in as: {user.username}</p>
 

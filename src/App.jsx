@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AuthForm from "./components/AuthForm";
 import HomePage from "./components/HomePage";
 import { getCurrentUser, login, logout, signup } from "./api";
-
+import "./App.css"
 function App() {
   const [authMode, setAuthMode] = useState("login");
   const [user, setUser] = useState(null);
@@ -59,7 +59,7 @@ function App() {
 
   if (user) {
     return (
-      <div>
+      <div className="app">
         <HomePage user={user} onLogout={handleLogout} />
         {message && <p>{message}</p>}
       </div>
@@ -67,7 +67,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app">
       <AuthForm
         mode={authMode}
         onSubmit={authMode === "login" ? handleLogin : handleSignup}
