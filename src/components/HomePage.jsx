@@ -89,40 +89,4 @@ export default function HomePage({ user, onLogout }) {
     </div>
   );
 
-  /*
-  return (
-    <div>
-      <h1>Welcome</h1>
-      <p>Logged in as: {user.username}</p>
-
-      <h2>Todos</h2>
-
-      <form onSubmit={handleCreateTodo}>
-        <input
-          type="text"
-          value={newDescription}
-          onChange={(event) => setNewDescription(event.target.value)}
-          placeholder="Enter a new todo"
-        />
-        <button type="submit">Add todo</button>
-      </form>
-
-      {message && <p>{message}</p>}
-
-      {todos.length === 0 ? (
-        <p>No todos yet</p>
-      ) : (
-        <ul>
-          {todos.map((todo) => (
-            <li key={todo.id}>
-              {todo.description}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <button onClick={onLogout}>Logout</button>
-    </div>
-  );
-  */
 }
