@@ -1,3 +1,3 @@
 # Todo-frontend
 
-React UI for [Todo API]{https://github.com/aofred/todo-api}
+React UI for [Todo API](https://github.com/aofred/todo-api)
